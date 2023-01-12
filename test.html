@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scannning</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: consolas;
+        }
+        body{
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .can{
+            position: relative;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+        }
+        .scan .fingerprint{
+            position: relative;
+            width: 300px;
+            height: 380px;
+            background-size: 300px;
+        }
+        .scan .fingerprint::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: 300px;
+            animation: animate 4s ease-in-out infinite;
+        }
+        @keyframes animate{
+            0%,100%{
+                height: 0%;
+            }
+            50%{
+                height: 100%;
+        }
+     }
+     .scan .fingerprint::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            top: 0;
+            left: 0;
+            background: #3a3b3b;
+            border-radius: 8px;
+            background-size: 300px;
+            animation: animate_life 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px #31d91e) drop-shadow(0 0 60px #3fefef);
+            
+        }
+        button{
+            width: 100%;
+            font-size: 15px;
+            height: 40px;
+            color: #fff;
+            border-radius: 8px;
+            border: none;
+            background: dodgerblue;
+            filter: drop-shadow(0 0 20px #2d3af5) drop-shadow(0 0 60px #2d3af2);
+        }
+        @keyframes animate_life{
+            0%,100%{
+                height: 0%;
+            }
+            50%{
+                height: 100%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="scan">
+        <div class="fingerprint"></div>
+        <h3>Processing...</h3>
+        <br>
+        <br>
+        <button>Dev4life</button>
+    </div>
+</body>
+</html>
